@@ -528,6 +528,11 @@ async function fetchWatchPageData(platform, bookId, epNum, coverUrl) {
     }
   }
 
+  // Ensure absolute URL if relative path
+  if (subUrl && subUrl.startsWith('/')) {
+    subUrl = `https://nunodrama.my.id${subUrl}`;
+  }
+
   return { streamUrl, subUrl, keyHex };
 }
 
@@ -664,6 +669,9 @@ async function downloadAndProcessEpisode(streamUrl, subUrl, keyHex, epNum) {
     // Extract Subtitle if present
     let vttContent = null;
     if (subUrl) {
+      if (subUrl.startsWith('/')) {
+        subUrl = `https://nunodrama.my.id${subUrl}`;
+      }
       try {
         console.log(`  📝 Mengambil subtitle dari ${subUrl.slice(0, 60)}...`);
         const subRes = await fetch(subUrl, {
@@ -689,6 +697,25 @@ async function downloadAndProcessEpisode(streamUrl, subUrl, keyHex, epNum) {
         }
       } catch (err) {
         console.warn(`  [Sub Warning] Gagal fetch subtitle ep ${epNum}:`, err.message);
+      }
+
+      // Fallback: Direct worker fetch if proxy fails or returns empty
+      if (!vttContent && subUrl.includes('url=')) {
+        try {
+          const rawParam = subUrl.match(/url=([^&]+)/)?.[1];
+          if (rawParam) {
+            const directUrl = decodeURIComponent(rawParam);
+            const vttRes2 = await fetch(directUrl, {
+              headers: { 'User-Agent': BROWSER_USER_AGENT, Referer: 'https://nunodrama.my.id/' },
+            });
+            if (vttRes2.ok) {
+              const body = await vttRes2.text();
+              if (body.includes('WEBVTT') || body.includes('-->')) {
+                vttContent = body;
+              }
+            }
+          }
+        } catch {}
       }
     }
 
