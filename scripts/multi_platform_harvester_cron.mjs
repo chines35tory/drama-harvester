@@ -1151,6 +1151,44 @@ async function main() {
 
     // Tandai status COMPLETED di antrean JSON
     updateQueueStatus(auditData, selectedDramaItem.BookID, dramaPlatform, 'COMPLETED');
+
+    // 6. Instant SEO Notification & Edge Cache Purge
+    try {
+      console.log(`🌐 Mengirimkan sinyal Instant SEO (IndexNow) & Cache Purge untuk "${targetSlug}"...`);
+      const siteUrl = 'https://chinesestory.net';
+      const pageUrls = [
+        `${siteUrl}/drama/${targetSlug}`,
+        `${siteUrl}/watch/${targetSlug}/1`,
+        `${siteUrl}/`,
+        `${siteUrl}/sitemap.xml`,
+        `${siteUrl}/feed.xml`,
+      ];
+
+      // Ping IndexNow API (Bing, Yandex, Seznam, Naver)
+      const indexNowRes = await fetch('https://api.indexnow.org/indexnow', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+        body: JSON.stringify({
+          host: 'chinesestory.net',
+          key: '9f8e7d6c5b4a392817263544abcdef01',
+          keyLocation: 'https://chinesestory.net/9f8e7d6c5b4a392817263544abcdef01.txt',
+          urlList: pageUrls,
+        }),
+      });
+      console.log(`  🚀 IndexNow ping status: ${indexNowRes.status}`);
+
+      // Purge Next.js edge cache agar drama baru langsung muncul di homepage & halaman drama
+      await fetch(`${siteUrl}/api/revalidate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          secret: process.env.REVALIDATION_SECRET || 'cs_reval_secret_2026',
+          path: `/drama/${targetSlug}`,
+        }),
+      }).catch(() => {});
+    } catch (seoErr) {
+      console.warn(`  [SEO Warning] Gagal ping IndexNow: ${seoErr.message}`);
+    }
   } else {
     console.log(`\n⏸️ [PUBLISHING GATE] Drama "${cleanTitle}" baru memiliki ${finalCount}/${totalEps} episode.`);
     console.log(`🔒 Status tetap diarsipkan (is_archived: true) untuk menjaga integritas tayangan.`);
