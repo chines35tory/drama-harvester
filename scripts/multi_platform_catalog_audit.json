@@ -2,9 +2,9 @@
   "generatedAt": "2026-11-21T03:09:08.662Z",
   "summary": {
     "totalScanned": 249,
-    "readyToHarvest": 216,
+    "readyToHarvest": 215,
     "inProgress": 1,
-    "alreadyPublished": 28,
+    "alreadyPublished": 29,
     "crossPlatformDuplicates": 4
   },
   "platformStats": [
@@ -202,10 +202,11 @@
       "slug": "bangkit-bersama-naga",
       "totalEpisodes": 36,
       "coverUrl": "https://awscover.netshort.com/tos-vod-mya-v-da59d5a2040f5f77/ai_poster/2117455182726574081/db7fe7518a9e4665848deb0cf22872c1/2118537178148659201_composed.jpg~tplv-vod-rs:540:720.webp",
-      "status": "READY_TO_HARVEST",
+      "status": "COMPLETED",
       "reason": "",
       "normKey": "bangkitbersamanaga",
-      "isDubbing": false
+      "isDubbing": false,
+      "completedAt": "2026-11-22T01:35:22.435Z"
     },
     {
       "platformId": "dramabox",
