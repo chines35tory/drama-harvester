@@ -2,9 +2,9 @@
   "generatedAt": "2026-11-21T03:09:08.662Z",
   "summary": {
     "totalScanned": 249,
-    "readyToHarvest": 215,
+    "readyToHarvest": 214,
     "inProgress": 1,
-    "alreadyPublished": 29,
+    "alreadyPublished": 30,
     "crossPlatformDuplicates": 4
   },
   "platformStats": [
@@ -217,8 +217,8 @@
       "slug": "kebangkitan-jiwa-dub-indo",
       "totalEpisodes": 87,
       "coverUrl": "https://hwztchapter.dramaboxdb.com/data/cppartner/4x1/41x0/410x0/41000106122/41000106122.jpg?t=1726717304452",
-      "status": "READY_TO_HARVEST",
-      "reason": "",
+      "status": "ALREADY_PUBLISHED",
+      "reason": "Sudah ada di database",
       "normKey": "kebangkitanjiwa",
       "isDubbing": true
     },
@@ -231,8 +231,8 @@
       "slug": "terlahir-kembali-bangun-keluarga-dari-hasil-laut",
       "totalEpisodes": 97,
       "coverUrl": "https://p16-common-sign.tiktokcdn.com/tos-alisg-i-fjfgkmyddx-sg/2be932dd52174e4e828f9b2f6d96d211~tplv-tiktokx-cropcenter:432:576.jpeg?dr=14579&refresh_token=1110c46a&x-expires=1795316400&x-signature=%2FDLj0QNpHVKxpS8PIYGbcFTTit4%3D&t=4d5b0474&ps=13740610&shp=823fac6e&shcp=9b759fb9&idc=my2",
-      "status": "READY_TO_HARVEST",
-      "reason": "",
+      "status": "ALREADY_PUBLISHED",
+      "reason": "Sudah ada di database",
       "normKey": "terlahirkembalibangunkeluargadarihasillaut",
       "isDubbing": false
     },
@@ -245,10 +245,11 @@
       "slug": "tiga-teman-pacarku-mendambakanku",
       "totalEpisodes": 32,
       "coverUrl": "https://v-img.crazymaplestudios.com/v-images/book_cover_batch/504201150000008690/b928bfc3-8df2-49db-b77f-eaa015882634.jpg",
-      "status": "READY_TO_HARVEST",
+      "status": "COMPLETED",
       "reason": "",
       "normKey": "tigatemanpacarkumendambakanku",
-      "isDubbing": false
+      "isDubbing": false,
+      "completedAt": "2026-11-22T10:02:42.572Z"
     },
     {
       "platformId": "shortmax",
