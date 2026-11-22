@@ -2,9 +2,9 @@
   "generatedAt": "2026-11-21T03:09:08.662Z",
   "summary": {
     "totalScanned": 249,
-    "readyToHarvest": 213,
+    "readyToHarvest": 212,
     "inProgress": 1,
-    "alreadyPublished": 31,
+    "alreadyPublished": 32,
     "crossPlatformDuplicates": 4
   },
   "platformStats": [
@@ -275,10 +275,11 @@
       "slug": "sebelum-kiamat-aku-borong-semua",
       "totalEpisodes": 40,
       "coverUrl": "https://assets.stardusttv.cc/uploadfile/20261103/976216185738727424.jpg",
-      "status": "READY_TO_HARVEST",
+      "status": "COMPLETED",
       "reason": "",
       "normKey": "sebelumkiamatakuborongsemua",
-      "isDubbing": false
+      "isDubbing": false,
+      "completedAt": "2026-11-22T23:46:38.219Z"
     },
     {
       "platformId": "flextv",
