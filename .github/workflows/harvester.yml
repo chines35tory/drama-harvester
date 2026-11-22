@@ -1,0 +1,62 @@
+name: Automated Multi-Platform Drama Harvester (24/7 Cloud)
+
+on:
+  schedule:
+    # Berjalan setiap 2 jam (00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00 UTC)
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  harvest-multi-platform:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install System FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      - name: Install Minimal Dependencies
+        run: |
+          npm install --no-audit --prefer-offline @supabase/supabase-js
+
+      - name: Light Jitter Delay
+        if: github.event_name == 'schedule'
+        run: |
+          JITTER=$((30 + RANDOM % 60))
+          echo "Sleeping for $JITTER seconds..."
+          sleep $JITTER
+
+      - name: Execute Automated Multi-Platform Harvester Engine
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || 'https://api.chinesestory.net' }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_STORAGE_CHANNEL_ID: ${{ secrets.TELEGRAM_STORAGE_CHANNEL_ID || '-1004333112987' }}
+        run: |
+          node scripts/multi_platform_harvester_cron.mjs
+
+      - name: Persist Audit Queue Progress
+        if: always()
+        run: |
+          git config --global user.name "chinesestory-bot"
+          git config --global user.email "bot@chinesestory.net"
+          git add scripts/multi_platform_catalog_audit.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(harvester): update multi-platform audit queue [skip ci]"
+            git push origin main
+          fi

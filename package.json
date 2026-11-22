@@ -1,0 +1,12 @@
+{
+  "name": "drama-harvester",
+  "version": "1.0.0",
+  "description": "Automated 24/7 Cloud Multi-Platform Drama Harvester for ChineseStory",
+  "type": "module",
+  "scripts": {
+    "harvest": "node scripts/multi_platform_harvester_cron.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1"
+  }
+}
