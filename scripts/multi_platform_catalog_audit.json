@@ -2,9 +2,9 @@
   "generatedAt": "2026-11-21T03:09:08.662Z",
   "summary": {
     "totalScanned": 249,
-    "readyToHarvest": 214,
+    "readyToHarvest": 213,
     "inProgress": 1,
-    "alreadyPublished": 30,
+    "alreadyPublished": 31,
     "crossPlatformDuplicates": 4
   },
   "platformStats": [
@@ -260,10 +260,11 @@
       "slug": "dijulukisang-pembangkit-negara",
       "totalEpisodes": 66,
       "coverUrl": "https://volcengine-forward.shorttv.live/images/cover/2025/12/24/df1e661cd9064037b184ad33d5c2181a.jpg?auth_key=1795259346-0-0-c9beacecadff3fee954d63d96d5b6661&process=mediagate",
-      "status": "READY_TO_HARVEST",
+      "status": "COMPLETED",
       "reason": "",
       "normKey": "dijulukisangpembangkitnegara",
-      "isDubbing": false
+      "isDubbing": false,
+      "completedAt": "2026-11-22T18:31:39.066Z"
     },
     {
       "platformId": "stardust",
