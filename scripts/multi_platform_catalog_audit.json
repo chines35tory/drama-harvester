@@ -2,9 +2,9 @@
   "generatedAt": "2026-11-21T03:09:08.662Z",
   "summary": {
     "totalScanned": 249,
-    "readyToHarvest": 212,
+    "readyToHarvest": 211,
     "inProgress": 1,
-    "alreadyPublished": 32,
+    "alreadyPublished": 33,
     "crossPlatformDuplicates": 4
   },
   "platformStats": [
@@ -290,8 +290,8 @@
       "slug": "sadarlah-tuan-nyonya-muda-ingin-bercerai",
       "totalEpisodes": 46,
       "coverUrl": "https://file-cdn.flextv.cc/image/2d/b78958aee48e9912f30483e579f459.jpg?image_process=resize,w_420/quality,Q_70/format,webp",
-      "status": "READY_TO_HARVEST",
-      "reason": "",
+      "status": "ALREADY_PUBLISHED",
+      "reason": "Sudah ada di database",
       "normKey": "sadarlahtuannyonyamudainginbercerai",
       "isDubbing": false
     },
@@ -304,10 +304,11 @@
       "slug": "kaya-di-zaman-kuno-dengan-kuliner-modern-1",
       "totalEpisodes": 119,
       "coverUrl": "https://images.weserv.nl/?url=https%3A%2F%2Fp16-novel-sign.fizzopic.org%2Fnovel-images-apsoutheast%2Fda2bdf902cb9d9ec3130bc9a395fc9df~tplv-836v1mcgsk-image-quality-ttk1-cp%3A570%3A810.heic%3Frk3s%3D95ec04ee%26x-expires%3D1796947874%26x-signature%3DY%252Bs%252BG%252ByatcRPOhj747K5ixXsRos%253D&output=webp",
-      "status": "READY_TO_HARVEST",
+      "status": "COMPLETED",
       "reason": "",
       "normKey": "kayadizamankunodengankulinermodern1",
-      "isDubbing": false
+      "isDubbing": false,
+      "completedAt": "2026-11-23T20:40:25.023Z"
     },
     {
       "platformId": "netshort",
