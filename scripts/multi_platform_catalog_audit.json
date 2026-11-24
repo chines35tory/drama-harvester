@@ -2,9 +2,9 @@
   "generatedAt": "2026-11-21T03:09:08.662Z",
   "summary": {
     "totalScanned": 249,
-    "readyToHarvest": 211,
+    "readyToHarvest": 210,
     "inProgress": 1,
-    "alreadyPublished": 33,
+    "alreadyPublished": 34,
     "crossPlatformDuplicates": 4
   },
   "platformStats": [
@@ -319,10 +319,11 @@
       "slug": "laut-terlarang-diclaim-raja-mafia",
       "totalEpisodes": 54,
       "coverUrl": "https://awscover.netshort.com/tos-vod-mya-v-da59d5a2040f5f77/imageG/production/2088794326687870977/1787192363321-9074618190877478-3比4jpg~tplv-vod-rs:540:720.webp",
-      "status": "READY_TO_HARVEST",
+      "status": "COMPLETED",
       "reason": "",
       "normKey": "lautterlarangdiclaimrajamafia",
-      "isDubbing": false
+      "isDubbing": false,
+      "completedAt": "2026-11-24T18:10:59.493Z"
     },
     {
       "platformId": "dramabox",
