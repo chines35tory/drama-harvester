@@ -2,9 +2,9 @@
   "generatedAt": "2026-11-21T03:09:08.662Z",
   "summary": {
     "totalScanned": 249,
-    "readyToHarvest": 210,
+    "readyToHarvest": 209,
     "inProgress": 1,
-    "alreadyPublished": 34,
+    "alreadyPublished": 35,
     "crossPlatformDuplicates": 4
   },
   "platformStats": [
@@ -334,10 +334,11 @@
       "slug": "takdir-putri-yang-hilang",
       "totalEpisodes": 72,
       "coverUrl": "https://hwztchapter.dramaboxdb.com/data/cppartner/4x1/41x0/410x0/41000118861/41000118861.jpg?t=1753076245341",
-      "status": "READY_TO_HARVEST",
+      "status": "COMPLETED",
       "reason": "",
       "normKey": "takdirputriyanghilang",
-      "isDubbing": false
+      "isDubbing": false,
+      "completedAt": "2026-11-25T14:41:49.740Z"
     },
     {
       "platformId": "pinewave",
